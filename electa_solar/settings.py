@@ -25,7 +25,7 @@ SECRET_KEY = '*ul*%wwynyn7f-en(5(a92u*ojz-=8s5&9&xeb6rnfglm$+vwb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'electasolar.pythonanywhere.com']
 
 
 # Application definition
