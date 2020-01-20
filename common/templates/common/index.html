@@ -1,0 +1,346 @@
+
+{% extends 'common/background.html' %}
+    {% block content %}
+    {% load static %}
+    <!-- ***** Hero Area Start ***** -->
+    <div class="fancy-hero-area bg-img bg-overlay animated-img" style="background-image: url({% static 'common/img/bg-img/hero-1.jpg' %});">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-12">
+                    <div class="fancy-hero-content text-center">
+                        <!-- Video Overview -->
+                        <h2 class="titulo">ELECTA<span style="font-size: 66px;color:#ffa100;text-shadow: 0px 0px 3px #fff;">SOLAR</span></h2>
+                        <h2><span style="border-radius: 15px;padding:1%;background-color: rgba(1,119,10,0.3);color:#ffa100;font-size: 24px;">Switching to renewable energy is not only the best choice, it's our only option</span></h2>
+                        <br><br>
+                        <a href="#cta" class="btn fancy-btn fancy-active">Know more</a>
+                        <a data-toggle="modal" href="#quote" class="btn fancy-btn">Get a free quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Hero Area End ***** -->
+
+    <!-- ***** Top Feature Area Start ***** -->
+    <div class="fancy-top-features-area bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="fancy-top-features-content">
+                        <div class="row no-gutters">
+                            <div class="col-12 col-md-4">
+                                <div class="single-top-feature">
+                                    <h5 class="text-center">
+                                        <span class="fa-stack fa-2x">
+                                        <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                                        <img style="height: 50px; width: 50px;margin-bottom: 10%;" class="fa fa-stack" src="{% static 'common/img/icons/money.svg' %}">
+                                        </span>
+                                        <br><br>
+                                        Reduce your electrical bills
+                                    </h5>
+                                    <p>Using power from the sun is free—so you will just have to pay for the electricity you use when the sun’s not out.</p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="single-top-feature">
+                                    <h5 class="text-center">
+                                        <span class="fa-stack fa-2x">
+                                        <i class="fa fa-2x fa-circle fa-stack-2x icon-background"></i>
+                                        <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                                        <img style="height: 45px; width: 45px;margin-bottom: 10%;" class="fa fa-stack" src="{% static 'common/img/icons/profit.svg' %}">
+                                        </span>
+                                        <br><br>
+                                        Increase your house value
+                                    </h5>
+                                    <p>Solar panels increase the value of your property. A house with solar panels can easily go for more than a house without.</p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="single-top-feature">
+                                    <h5 class="text-center">
+                                        <span class="fa-stack fa-2x">
+                                        <i class="fa fa-2x fa-circle fa-stack-2x icon-background"></i>
+                                        <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                                        <img style="height: 50px; width: 50px;margin-bottom: 10%;" class="fa fa-stack" src="{% static 'common/img/icons/green-earth.svg' %}">
+                                        </span>
+                                        <br><br>
+                                        Become eco-friendly
+                                    </h5>
+                                    <p>Generating electricity from solar panels produce no greenhouse gases, and can reduce the effect of climate change.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Top Feature Area End ***** -->
+    <br>
+    <!-- ***** About Us Area Start ***** -->
+    <section class="fancy-about-us-area bg-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <div class="about-us-text">
+                        <h2>We are Solar Experts</h2>
+                        <p>Electa Solar is a company with over 10 years of experience in the field of clean energy, especially in harnessing solar power.</p>
+                        <p>We are proud to provide organizations and companies natural and clean energy, hence also contributing to reducing the global pollution levels.</p>
+                        <p>Electa Solar strives to develop more feasible and cleaner energy sources and to bring the atmost satisfaction to our customers.</p> 
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 col-xl-5">
+                    <div class="about-us-thumb wow fadeInUp" data-wow-delay="0.5s">
+                        <img style="height: 300px; width: 1400px;" src="{% static 'common/img/bg-img/about-1.jpg' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** About Us Area End ***** -->
+    
+    <!-- ***** Skills Area Start ***** -->
+    <section class="fancy-skills-area ">
+        <!-- Side Thumb -->
+        <div class="skills-side-thumb">
+            <img style="border-radius: 5px;height:400px; width: 900px; margin-left: 5%;" src="{% static 'common/img/bg-img/sun.jpg' %}" alt="">
+        </div>
+        <!-- Skills Content -->
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-xl-5 ml-auto">
+                    <br><br><br>
+                    <div class="section-heading">
+                        <h2>The Sun Shines to Everyone in Egypt</h2>
+                        <p>Everyone in Egypt can have access to solar energy, from homes to business and since the government.<br/>
+                            Thus, Electa Solar has the most diverse customers, distributed as follows:</p>
+                    </div>
+                    <div class="skills-content">
+                        <!-- Single Progress Bar -->
+                        <div class="single_progress_bar wow fadeInUp" data-wow-delay="0.5s">
+                            <h6>Houses</h6>
+                            <div id="bar1" class="barfiller">
+                                <div class="tipWrap">
+                                    <span class="tip"></span>
+                                </div>
+                                <span class="fill" data-percentage="38"></span>
+                            </div>
+                        </div>
+                        <!-- Single Progress Bar -->
+                        <div class="single_progress_bar wow fadeInUp" data-wow-delay="1s">
+                            <h6>Business</h6>
+                            <div id="bar2" class="barfiller">
+                                <div class="tipWrap">
+                                    <span class="tip"></span>
+                                </div>
+                                <span class="fill" data-percentage="32"></span>
+                            </div>
+                        </div>
+                        <!-- Single Progress Bar -->
+                        <div class="single_progress_bar wow fadeInUp" data-wow-delay="1.5s">
+                            <h6>Government</h6>
+                            <div id="bar3" class="barfiller">
+                                <div class="tipWrap">
+                                    <span class="tip"></span>
+                                </div>
+                                <span class="fill" data-percentage="30"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Skills Area End ***** -->
+
+    <!-- ***** Service Area Start ***** -->
+    <section id="cta" class="fancy-services-area bg-img bg-overlay section-padding-100-70" style="background-image: url({% static 'common/img/bg-img/bg.jpg' %})">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading heading-white text-center">
+                        <h2 class="text-center" style="font-weight: bolder;">OUR SERVICES</h2>
+                        <p><b style="font-weight: bolder;">Electa Solar</b> strives to bring the atmost satisfaction to our customers.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                {% for serv in services %}
+                <!-- Single Service -->
+                <div class="col-12 col-md-4">
+                    <a href="{% url 'service' pk=serv.pk %}" class="service-link">
+                        <div class="single-service-area text-center wow fadeInUp" data-wow-delay="0.5s">
+                            <img class="imgbranca" src="{{serv.icon.url}}" width="75" height="75" alt=""/>
+                            <img class="imgverde" src="{{serv.icon2.url}}" width="75" height="75" alt=""/>
+                            <h5>{{serv.title}}</h5>
+                            <p>{{serv.description}}</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- ***** Service Area End ***** -->
+    <!-- ***** CTA Area Start ***** -->
+    <br>
+    <br>
+    <div class="fancy-cta-area why_us pt-4 pb-4">
+        <div class="container cta-content" >
+            <h2 class="text-center">WHY <span style="background-color: #356c08; color:#ffa100;padding-left: 1%;padding-right: 1%;border-radius: 15px; ">OUR COMPANY</span> ?</h2>
+            <br>
+            <div class="row" >
+                <div class="col-lg-4 col-md-6"> 
+                    <ul>
+                        <li >
+                            <div class="icon"><img src="{% static 'common/img/icons/green.svg' %}" alt=""></div>
+                            <div class="inner" style="margin-top: 10%;">
+                                <h3>Always Clean Energy</h3>
+                                <p>The energy source with least polltion rates.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon"><img src="{% static 'common/img/icons/install.svg' %}" alt=""></div>
+                            <div class="inner" style="margin-top: 10%;">
+                                <h3>Easy Installation</h3>
+                                <p>Our products require minimal installation time.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon"><img src="{% static 'common/img/icons/group.svg' %}" alt=""></div>
+                            <div class="inner" style="margin-top: 10%;">
+                                <h3>Used for Many Purposes</h3>
+                                <p>Our products require minimal installation time.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-12 text-center">
+                    <img height="100%" width="100%" src="{% static 'common/img/logo-main.png' %}" alt="">
+                    <br><br><br>
+                    <div class="col align-items-center">
+                        <div class="row justify-content-center">
+                            <button type="button" data-toggle="modal" data-target="#quote" class="btn pupr-btn text-center">Get a Free Quote</button>
+                        </div>
+                        <br>
+                        <div class="row justify-content-center" >
+                            <button type="button" data-toggle="modal" data-target="#calc" class="btn pup-btn text-center">Savings Calculator</button>
+                            &nbsp;&nbsp;
+                            <button type="button" data-toggle="modal" data-target="#quote" class="btn pup-btn text-center">all Applications</button>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                    
+                <div class="col-lg-4 col-md-6"> 
+                    <ul>
+                        <li>
+                            <div class="icon"><img src="{% static 'common/img/icons/medal.svg' %}" alt=""></div>
+                            <div class="inner" style="margin-top: 10%;">
+                                <h3>Long Life</h3>
+                                <p>We use only the best materials for all the products.</p>   
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon"><img src="{% static 'common/img/icons/cost.svg' %}" alt=""></div>
+                            <div class="inner" style="margin-top: 10%;">
+                                <h3>Low Installation Costs</h3>
+                                <p>We provide the best installation services at the cheapest rates.</p>    
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon"><img src="{% static 'common/img/icons/bio.svg' %}" alt=""></div>
+                            <div class="inner" style="margin-top: 10%;">
+                                <h3>Energy Can Be Reused</h3>
+                                <p>Our products require minimal installation time.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <div class="modal fade" id="quote" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #356c08;">
+                    <h5 class="modal-title text-white" id="exampleModalLabel">FREE QUOTE</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span style="color:#fff" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Complete the form to get a free quote.</p>
+                    <p><i>Fields with * are unrequired.</i></p>
+                    <form>
+                      <div class="form-group">
+                        <label for="recipient-fname" class="col-form-label">First name:</label>
+                        <input type="text" class="form-control" id="recipient-fname" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="recipient-lname" class="col-form-label">Last name:</label>
+                        <input type="text" class="form-control" id="recipient-lname" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="recipient-phone" class="col-form-label">Phone number:</label>
+                        <input type="text" class="form-control" id="recipient-phone" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="recipient-email" class="col-form-label">Email:</label>
+                        <input type="text" class="form-control" id="recipient-email" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="address-text" class="col-form-label">Address:</label>
+                        <textarea class="form-control" id="address-text" required></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="obs-text" class="col-form-label">* Observartions:</label>
+                        <textarea class="form-control" id="obs-text"></textarea>
+                      </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn modal-btn" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn modal-btn">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="calc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #356c08;">
+                    <h5 class="modal-title text-white" id="exampleModalLabel">SAVINGS CALCULATOR</h5>                    
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span style="color:#fff" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group text-left">
+                            <label for="recipient-name" class="col-form-label">Area available (m²)</label>
+                            <input type="text" class="form-control" id="area">
+                        </div>
+                        <div class="form-group text-right">
+                            <label id="labelSave" for="message-text" class="col-form-label">You can save: <span style="font-weight: bolder;" id="saving">&times;</span> EGP per month</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn modal-btn" data-dismiss="modal">Close</button>
+                    <button type="button" onclick="openquote()" class="btn modal-btn">Get a Free Quote</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
