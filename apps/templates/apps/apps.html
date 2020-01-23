@@ -1,0 +1,60 @@
+{% extends 'common/background.html' %}
+
+{% load static %}
+
+{% block content %}
+    <!-- ***** Hero Area Start ***** -->
+    <div class="fancy-hero-area bg-img bg-overlay animated-img" style="background-image: url({% static 'common/img/bg-img/hero-1.jpg' %});">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-12">
+                    <div class="fancy-hero-content text-center">
+                        <h2 style="color: #ffa100;">Applications</h2><br><br><br>
+                        <!-- Video Overview -->
+                        <div class="row justify-content-center">
+                            {% for app in apps %}
+                                <div class="col-12 col-md-3">
+                                    <a data-toggle="modal" href="{{app.modal}}">
+                                        <img style="background-color: rgb(53,108,8,.5);padding: 10px;border: 3px #ffa100  solid;border-radius: 5px;" src="{{app.icon.url}}" width="150" height="150" alt="">
+                                        <br><br>
+                                        <a data-toggle="modal" href="{{app.modal}}" class="btn pup-btn text-center">{{app.title}}</a>
+                                    </a> 
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Hero Area End ***** -->
+
+
+    <div class="modal fade" id="savings" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #356c08;">
+                    <h5 class="modal-title text-white" id="exampleModalLabel">SAVINGS CALCULATOR</h5>                    
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span style="color:#fff" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group text-left">
+                            <label for="recipient-name" class="col-form-label">Area available (m²)</label>
+                            <input type="text" class="form-control" id="area">
+                        </div>
+                        <div class="form-group text-right">
+                            <label id="labelSave" for="message-text" class="col-form-label">You can save: <span style="font-weight: bolder;" id="saving">&times;</span> EGP per month</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn modal-btn" data-dismiss="modal">Close</button>
+                    <button type="button" onclick="openquote()" class="btn modal-btn">Get a Free Quote</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

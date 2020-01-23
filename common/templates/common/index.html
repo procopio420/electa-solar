@@ -229,7 +229,7 @@
                         <div class="row justify-content-center" >
                             <button type="button" data-toggle="modal" data-target="#calc" class="btn pup-btn text-center">Savings Calculator</button>
                             &nbsp;&nbsp;
-                            <button type="button" data-toggle="modal" data-target="#quote" class="btn pup-btn text-center">all Applications</button>
+                            <a href="{% url 'apps' %}" class="btn pup-btn text-center">all Applications</a>
                         </div>
                         
                         
@@ -309,7 +309,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn modal-btn" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn modal-btn">Send</button>
+                    <a href="{% url 'email' %}" class="btn modal-btn">Send</a>
                 </div>
             </div>
         </div>
