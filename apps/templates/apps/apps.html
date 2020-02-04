@@ -15,7 +15,7 @@
                             {% for app in apps %}
                                 <div class="col-12 col-md-3">
                                     <a data-toggle="modal" href="{{app.modal}}">
-                                        <img style="background-color: rgb(53,108,8,.5);padding: 10px;border: 3px #ffa100  solid;border-radius: 5px;" src="{{app.icon.url}}" width="150" height="150" alt="">
+                                        <img style="background-color: rgb(53,108,8,.5);padding: 10px;border: 3px #ffa100  solid;border-radius: 5px;" src="{{app.icon.url}}" width="60%" height="60%" alt="">
                                         <br><br>
                                         <a data-toggle="modal" href="{{app.modal}}" class="btn pup-btn text-center">{{app.title}}</a>
                                     </a> 
@@ -29,7 +29,52 @@
     </div>
     <!-- ***** Hero Area End ***** -->
 
-
+    <div class="modal fade" id="quote" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #356c08;">
+                    <h5 class="modal-title text-white" id="exampleModalLabel">FREE QUOTE</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span style="color:#fff" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Complete the form to get a free quote.</p>
+                    <p><i>Fields with * are unrequired.</i></p>
+                    <form>
+                      <div class="form-group">
+                        <label for="recipient-fname" class="col-form-label">First name:</label>
+                        <input type="text" class="form-control" id="recipient-fname" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="recipient-lname" class="col-form-label">Last name:</label>
+                        <input type="text" class="form-control" id="recipient-lname" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="recipient-phone" class="col-form-label">Phone number:</label>
+                        <input type="text" class="form-control" id="recipient-phone" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="recipient-email" class="col-form-label">Email:</label>
+                        <input type="text" class="form-control" id="recipient-email" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="address-text" class="col-form-label">Address:</label>
+                        <textarea class="form-control" id="address-text" required></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="obs-text" class="col-form-label">* Observartions:</label>
+                        <textarea class="form-control" id="obs-text"></textarea>
+                      </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn modal-btn" data-dismiss="modal">Close</button>
+                    <a href="{% url 'email' %}" class="btn modal-btn">Send</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="modal fade" id="savings" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -52,9 +97,171 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn modal-btn" data-dismiss="modal">Close</button>
-                    <button type="button" onclick="openquote()" class="btn modal-btn">Get a Free Quote</button>
+                    <button type="button" onclick="$('#savings').modal('hide');$('#savings').on('hidden.bs.modal', function(){ $('#quote').modal('show');$('#quote').modal('handleUpdate');});" class="btn modal-btn">Get a Free Quote</button>
                 </div>
             </div>
         </div>
     </div>
+    <div class="modal fade" id="panels" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #356c08;">
+                    <h5 class="modal-title text-white" id="exampleModalLabel">SOLAR PANELS CALCULATOR</h5>                    
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span style="color:#fff" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group text-left">
+                            <label for="recipient-name" class="col-form-label">Mensal consuption (kWh)</label>
+                            <input type="text" class="form-control" id="consuption">
+                        </div>
+                        <div class="form-group text-right">
+                            <label id="labelConsuption" for="message-text" class="col-form-label">You`ll need: <span style="font-weight: bolder;" id="panel"></span> solar panels.</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn modal-btn" data-dismiss="modal">Close</button>
+                    <button type="button" onclick="$('#panels').modal('hide');$('#panels').on('hidden.bs.modal', function(){ $('#quote').modal('show');$('#quote').modal('handleUpdate');});" class="btn modal-btn">Get a Free Quote</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="pump" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #356c08;">
+                    <h5 class="modal-title text-white" id="exampleModalLabel">WATER PUMPING CALCULATOR</h5>                    
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span style="color:#fff" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group text-left">
+                            <label for="recipient-name" class="col-form-label">Water volume per hours required: (m3/h)</label>
+                            <input type="text" class="form-control" id="water">
+                        </div>
+                        <div class="form-group text-left">
+                            <label for="recipient-name" class="col-form-label">Height pumped: (m)</label>
+                            <input type="text" class="form-control" id="height">
+                        </div>
+                        <div class="form-group text-right">
+                            <label id="labelWater" for="message-text" class="col-form-label">You`ll need: <span style="font-weight: bolder;" id="panelswater"></span> solar panels.</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn modal-btn" data-dismiss="modal">Close</button>
+                    <button type="button" onclick="$('#pump').modal('hide');$('#pump').on('hidden.bs.modal', function(){ $('#quote').modal('show');$('#quote').modal('handleUpdate');});" class="btn modal-btn">Get a Free Quote</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="fuel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #356c08;">
+                    <h5 class="modal-title text-white" id="exampleModalLabel">FUEL SAVER CALCULATOR</h5>                    
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span style="color:#fff" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group text-left">
+                            <label for="recipient-name" class="col-form-label">Number of solar panels: (Un)</label>
+                            <input type="text" class="form-control" id="panelsaver">
+                        </div>
+                        <div class="form-group text-right">
+                            <label id="labelSaver" for="message-text" class="col-form-label">You can save: <span style="font-weight: bolder;" id="liter"></span> litres of gas/hour.</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn modal-btn" data-dismiss="modal">Close</button>
+                    <button type="button" onclick="$('#fuel').modal('hide');$('#fuel').on('hidden.bs.modal', function(){ $('#quote').modal('show');$('#quote').modal('handleUpdate');});" class="btn modal-btn">Get a Free Quote</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            document.getElementById('panel').innerHTML = 0;
+            $('#consuption').on('input', function(){
+                var consuption = this.value;
+                if(isNaN(consuption)){
+                    document.getElementById('labelConsuption').innerHTML = "The consuption has to be in kilowatts-hour. <b>Only numbers accepted!</b>";
+                }
+                else {
+                    var npanels = consuption/0.410;
+                    document.getElementById('labelConsuption').innerHTML = 'You`ll need: <span style="font-weight: bolder;" id="panel">&times;</span> solar panels';
+                    document.getElementById('panel').innerHTML = Math.round(npanels);
+                }
+            })
+        });
+        $(document).ready(function(){
+            document.getElementById('saving').innerHTML = 0;
+            $('#area').on('input', function() { 
+                var area = this.value;
+                if(isNaN(area)){
+                    document.getElementById('labelSave').innerHTML = "The area has to be in meters. <b>Only numbers accepted!</b>";
+                }
+                else {
+                    var x = (area/10)*1750;
+                    var savings =  x * (1.15 - (1.15*0.9))*25;
+                    savings = Math.round(savings);
+                    document.getElementById('labelSave').innerHTML = 'You can save: <span style="font-weight: bolder;" id="saving">&times;</span> EGP per month';
+                    document.getElementById('saving').innerHTML = savings;
+                }
+                
+            });       
+        });
+        $(document).ready(function(){
+            document.getElementById('panelswater').innerHTML = 0;
+            $('#height').on('input', function() { 
+                var water = document.getElementById('water').value;
+                var height = this.value;
+                if(isNaN(height)){
+                    document.getElementById('labelWater').innerHTML = "The height has to be in meters. <b>Only numbers accepted!</b>";
+                }
+                else if(isNaN(water)){
+                    document.getElementById('labelWater').innerHTML = "The volume has to be in cubic meters. <b>Only numbers accepted!</b>";
+                }
+                else {
+                    var p = water * 1000 * 9.81;
+                    var watts = (p * height)/3600;
+                    var npanels = watts/410;
+                    npanels = Math.round(npanels);
+                    document.getElementById('labelWater').innerHTML = 'You`ll need: <span style="font-weight: bolder;" id="panelswater">&times;</span> solar panels';
+                    document.getElementById('panelswater').innerHTML = npanels;
+                }
+                
+            });  
+        });
+        $(document).ready(function(){
+            document.getElementById('liter').innerHTML = 0;
+            $('#panelsaver').on('input', function() { 
+                var npanels = this.value;
+                var kwatts = (npanels*410)/1000;
+                var l = kwatts*0.269142778;
+                l = Math.round(l);
+                if(isNaN(npanels)){
+                    document.getElementById('labelSaver').innerHTML = "The number of solar panels has to be in units. <b>Only numbers accepted!</b>";
+                }
+                else {
+                    var kwatts = (npanels*410)/1000;
+                    var l = kwatts*0.269142778;
+                    document.getElementById('labelSaver').innerHTML = 'You can save: <span style="font-weight: bolder;" id="liter">&times;</span> litres of gas/hour.';
+                    document.getElementById('liter').innerHTML = l.toFixed(2);
+                }
+                
+            });
+            
+        });
+    </script>
+
 {% endblock %}

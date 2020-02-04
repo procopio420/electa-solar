@@ -106,11 +106,7 @@ $(document).ready(function(){
         }
         
     });
+    
 });
-function openquote(){
-    $('#calc').modal('hide');
-    $('#calc').on('hidden.bs.modal', function(){
-        $('#quote').modal('show');
-        $('#quote').modal('handleUpdate');
-    })
-}
+
+
