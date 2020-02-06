@@ -6,6 +6,6 @@ from apps import views as aviews
 urlpatterns = [
     path('', views.index, name='index'),
     path('service/<int:pk>', sviews.service, name='service'),
-    path('email', views.send_email, name='email'),
-    path('applications', aviews.apps, name='apps')
+    path('applications', aviews.apps, name='apps'),
+
 ]

@@ -2,6 +2,7 @@
 {% extends 'common/background.html' %}
     {% block content %}
     {% load static %}
+    {% load crispy_forms_tags %}
     <!-- ***** Hero Area Start ***** -->
     <div class="fancy-hero-area bg-img bg-overlay animated-img" style="background-image: url({% static 'common/img/bg-img/hero-1.jpg' %});">
         <div class="container h-100">
@@ -279,37 +280,17 @@
                 </div>
                 <div class="modal-body">
                     <p>Complete the form to get a free quote.</p>
-                    <p><i>Fields with * are unrequired.</i></p>
+                    <p><i>Fields with * are required.</i></p>
                     <form>
-                      <div class="form-group">
-                        <label for="recipient-fname" class="col-form-label">First name:</label>
-                        <input type="text" class="form-control" id="recipient-fname" required>
-                      </div>
-                      <div class="form-group">
-                        <label for="recipient-lname" class="col-form-label">Last name:</label>
-                        <input type="text" class="form-control" id="recipient-lname" required>
-                      </div>
-                      <div class="form-group">
-                        <label for="recipient-phone" class="col-form-label">Phone number:</label>
-                        <input type="text" class="form-control" id="recipient-phone" required>
-                      </div>
-                      <div class="form-group">
-                        <label for="recipient-email" class="col-form-label">Email:</label>
-                        <input type="text" class="form-control" id="recipient-email" required>
-                      </div>
-                      <div class="form-group">
-                        <label for="address-text" class="col-form-label">Address:</label>
-                        <textarea class="form-control" id="address-text" required></textarea>
-                      </div>
-                      <div class="form-group">
-                        <label for="obs-text" class="col-form-label">* Observartions:</label>
-                        <textarea class="form-control" id="obs-text"></textarea>
-                      </div>
+                        {% csrf_token %}
+                        <table>
+                            {{ form|crispy }}
+                        </table>
+                        
+                        <div class="row justify-content-center">
+                            <input class="btn modal-btn" type="submit" value="Submit">
+                        </div>
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn modal-btn" data-dismiss="modal">Close</button>
-                    <a href="{% url 'email' %}" class="btn modal-btn">Send</a>
                 </div>
             </div>
         </div>
