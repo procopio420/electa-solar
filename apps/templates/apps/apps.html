@@ -4,7 +4,7 @@
 {% load crispy_forms_tags %}
 {% block content %}
     <!-- ***** Hero Area Start ***** -->
-    <div class="fancy-hero-area bg-img bg-overlay animated-img" style="background-image: url({% static 'common/img/bg-img/hero-1.jpg' %});">
+    <div class="fancy-hero-area bg-img bg-overlay animated-img" style="background-image: url({% static 'common/img/bg-img/hero-2.jpg' %});">
         <div class="container h-100">
             <div class="row h-100 align-items-center justify-content-center">
                 <div class="col-12">
@@ -29,32 +29,7 @@
     </div>
     <!-- ***** Hero Area End ***** -->
 
-    <div class="modal fade" id="quote" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="background-color: #356c08;">
-                    <h5 class="modal-title text-white" id="exampleModalLabel">FREE QUOTE</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span style="color:#fff" aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Complete the form to get a free quote.</p>
-                    <p><i>Fields with * are required.</i></p>
-                    <form>
-                        {% csrf_token %}
-                        <table>
-                            {{ form|crispy }}
-                        </table>
-                        
-                        <div class="row justify-content-center">
-                            <input class="btn modal-btn" type="submit" value="Submit">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <div class="modal fade" id="savings" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -77,7 +52,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn modal-btn" data-dismiss="modal">Close</button>
-                    <button type="button" onclick="$('#savings').modal('hide');$('#savings').on('hidden.bs.modal', function(){ $('#quote').modal('show');$('#quote').modal('handleUpdate');});" class="btn modal-btn">Get a Free Quote</button>
+                    <a href="{% url 'email' %}" class="btn modal-btn">Get a Free Quote</a>
                 </div>
             </div>
         </div>
@@ -104,7 +79,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn modal-btn" data-dismiss="modal">Close</button>
-                    <button type="button" onclick="$('#panels').modal('hide');$('#panels').on('hidden.bs.modal', function(){ $('#quote').modal('show');$('#quote').modal('handleUpdate');});" class="btn modal-btn">Get a Free Quote</button>
+                    <a href="{% url 'email' %}" class="btn modal-btn">Get a Free Quote</a>
                 </div>
             </div>
         </div>
@@ -135,7 +110,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn modal-btn" data-dismiss="modal">Close</button>
-                    <button type="button" onclick="$('#pump').modal('hide');$('#pump').on('hidden.bs.modal', function(){ $('#quote').modal('show');$('#quote').modal('handleUpdate');});" class="btn modal-btn">Get a Free Quote</button>
+                    <a href="{% url 'email' %}" class="btn modal-btn">Get a Free Quote</a>
                 </div>
             </div>
         </div>
@@ -162,7 +137,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn modal-btn" data-dismiss="modal">Close</button>
-                    <button type="button" onclick="$('#fuel').modal('hide');$('#fuel').on('hidden.bs.modal', function(){ $('#quote').modal('show');$('#quote').modal('handleUpdate');});" class="btn modal-btn">Get a Free Quote</button>
+                    <a href="{% url 'email' %}"class="btn modal-btn">Get a Free Quote</a>
                 </div>
             </div>
         </div>

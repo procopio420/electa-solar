@@ -14,7 +14,7 @@
                         <h2><span style="border-radius: 15px;padding:1%;background-color: rgba(1,119,10,0.3);color:#ffa100;font-size: 24px;">Switching to renewable energy is not only the best choice, it's our only option</span></h2>
                         <br><br>
                         <a href="#cta" class="btn fancy-btn fancy-active">Know more</a>
-                        <a data-toggle="modal" href="#quote" class="btn fancy-btn">Get a free quote</a>
+                        <a href="{% url 'email' %}" class="btn fancy-btn">Get a free quote</a>
                     </div>
                 </div>
             </div>
@@ -224,7 +224,7 @@
                     <br><br><br>
                     <div class="col align-items-center">
                         <div class="row justify-content-center">
-                            <button type="button" data-toggle="modal" data-target="#quote" class="btn pupr-btn text-center">Get a Free Quote</button>
+                            <a href="{% url 'email' %}" class="btn pupr-btn text-center">Get a Free Quote</a>
                         </div>
                         <br>
                         <div class="row justify-content-center" >
@@ -269,33 +269,6 @@
         
     </div>
 
-    <div class="modal fade" id="quote" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header" style="background-color: #356c08;">
-                    <h5 class="modal-title text-white" id="exampleModalLabel">FREE QUOTE</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span style="color:#fff" aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Complete the form to get a free quote.</p>
-                    <p><i>Fields with * are required.</i></p>
-                    <form>
-                        {% csrf_token %}
-                        <table>
-                            {{ form|crispy }}
-                        </table>
-                        
-                        <div class="row justify-content-center">
-                            <input class="btn modal-btn" type="submit" value="Submit">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="modal fade" id="calc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -318,18 +291,9 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn modal-btn" data-dismiss="modal">Close</button>
-                    <button type="button" onclick="openquote()" class="btn modal-btn">Get a Free Quote</button>
+                    <a href="{% url 'email' %}" class="btn modal-btn">Get a Free Quote</a>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        function openquote(){
-            $('#calc').modal('hide');
-            $('#calc').on('hidden.bs.modal', function(){
-                $('#quote').modal('show');
-                $('#quote').modal('handleUpdate');
-            })
-        };
-    </script>
     {% endblock %}

@@ -6,4 +6,4 @@ class QuoteForm(forms.Form):
     phone = forms.CharField(label='Phone number: ', max_length=25)
     email = forms.EmailField(label='Email: ')
     address = forms.CharField(label='Address: ', max_length=250)
-    obs = forms.CharField(label='Observations: ', max_length=250, required=False, widget=forms.Textarea)
+    obs = forms.CharField(label='Observations: ', max_length=150, required=False, widget=forms.Textarea)

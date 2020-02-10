@@ -1498,3 +1498,6 @@ a.service-link:hover .single-service-area .imgbranca{
     visibility: hidden;
     display: none;
 }
+.contato div div label{
+    color:white;
+}

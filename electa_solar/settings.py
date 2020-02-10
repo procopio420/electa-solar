@@ -15,12 +15,12 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-EMAIL_HOST = 'smtp.office365.com'
+EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'lucas-procopio2@outlook.com'
-EMAIL_HOST_PASSWORD = 'Haze420!'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = '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'
 EMAIL_USE_TLS = True
-EMAIL_BACKEND = 'django.template.backends.django.DjangoTemplates'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'sendemail.apps.SendemailConfig',
     'common',
     'services',
     'apps',

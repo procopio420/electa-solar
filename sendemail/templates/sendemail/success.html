@@ -1,0 +1,23 @@
+{% extends 'common/background.html' %}
+    {% block content %}
+    {% load static %}
+
+    <div class="fancy-hero-area bg-img bg-overlay animated-img" style="background-image: url({% static 'common/img/bg-img/hero-3.jpg' %});height:100% ">
+      <div class="container h-100">
+          <div class="row h-100 align-items-center justify-content-center">
+              <div class="col-6">
+                  <div class="fancy-hero-content text-center">
+                    <br><br><br><br><br><br><br><br><br><br>
+                      <!-- Video Overview -->
+                      <h2 style="font-size: 72px" class="titulo">Success!</h2>
+                      <br>
+                      <p class="text-white">Our team will answer you by email soon.</p>   
+                      <br>
+                      <a href="{% url 'index' %}" class="btn modal-btn">back</a>
+                    <br><br><br><br><br><br><br><br><br><br>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+{% endblock %}

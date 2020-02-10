@@ -21,4 +21,5 @@ from django.contrib import admin
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('common.urls')),
+    path('', include('sendemail.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
